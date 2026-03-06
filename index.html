@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>กลุ่มงานวิจัยและพัฒนาการพยาบาล กลุ่มภารกิจด้านการพยาบาล โรงพยาบาลชลบุรี | Chonburi Hospital Nursing Research Center</title>
+    
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts (Prompt for Thai) -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- 
+        FILE: style.css 
+        (ส่วน CSS ถูกฝังไว้ในไฟล์นี้เพื่อความสะดวกในการใช้งานแบบไฟล์เดียว 
+         หากต้องการแยกไฟล์ ให้นำเนื้อหาใน <style> ไปไว้ในไฟล์ style.css)
+    -->
+    <style>
+        :root {
+            --primary-color: #0d6efd; /* Bootstrap Primary Blue */
+            --secondary-color: #f8f9fa;
+            --text-dark: #2c3e50;
+            --accent-color: #0dcaf0;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: #f4f6f9;
+            color: var(--text-dark);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background-color: #fff;
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            color: var(--primary-color) !important;
+            font-size: 1.25rem;
+        }
+
+        .nav-link {
+            color: #555 !important;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(13, 110, 253, 0.7), rgba(13, 110, 253, 0.5)), 
+                        url('https://image.qwenlm.ai/public_source/36a30bfc-6dcb-4827-a342-d3f2cea64aa4/1849f7d64-52da-4e8c-9bf2-ff74134bedc8.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-cta {
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            background-color: #fff;
+            color: var(--primary-color);
+            border: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            background-color: #f8f9fa;
+            color: var(--primary-color);
+        }
+
+        /* Main Content */
+        .content-container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+            margin-bottom: 25px;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* Search Box */
+        .search-box {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .search-box input {
+            border-radius: 50px;
+            padding-left: 45px;
+            border: 1px solid #dee2e6;
+            background-color: #f8f9fa;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #adb5bd;
+        }
+
+        /* Table Styling */
+        .table-responsive {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .table thead {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .table-hover tbody tr:hover {
+            background-color: #f1f8ff;
+        }
+
+        .badge-category {
+            font-size: 0.85rem;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+
+        .btn-download {
+            padding: 5px 15px;
+            font-size: 0.9rem;
+            border-radius: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 40px 0 20px;
+            margin-top: auto;
+        }
+
+        .footer-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .footer-link {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-link:hover {
+            color: #fff;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            .content-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-hospital-user me-2"></i>กลุ่มงานวิจัยและพัฒนาการพยาบาล 
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">หน้าแรก</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">เกี่ยวกับเรา</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://witsaoo-jpg.github.io/nsoacademic/" target="_blank">คลังผลงานวิชาการ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#documents">เอกสารดาวน์โหลด</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">ติดต่อเรา</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">กลุ่มงานวิจัยและพัฒนาการพยาบาล  </h1>
+            <p class="hero-subtitle">ศูนย์รวมองค์ความรู้และนวัตกรรมทางการพยาบาล เพื่อการพัฒนาคุณภาพชีวิตผู้ป่วยอย่างยั่งยืน</p>
+            <a href="https://witsaoo-jpg.github.io/nsoacademic/" target="_blank" class="btn btn-cta shadow">
+                <i class="fas fa-book-medical me-2"></i>เข้าสู่คลังผลงานวิชาการ
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Documents Section -->
+        <section id="documents" class="content-container">
+            <h2 class="section-title">
+                <i class="fas fa-file-download me-2"></i>เอกสารและแบบฟอร์มวิจัย
+            </h2>
+            
+            <!-- Search Filter -->
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" class="form-control" placeholder="ค้นหาชื่อเอกสาร, หมวดหมู่...">
+            </div>
+
+            <!-- Data Table -->
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead>
+                        <tr>
+                            <th scope="col" style="width: 5%;">#</th>
+                            <th scope="col" style="width: 40%;">ชื่อเอกสาร / แบบฟอร์ม</th>
+                            <th scope="col" style="width: 20%;">หมวดหมู่</th>
+                            <th scope="col" style="width: 15%;">วันที่อัปเดต</th>
+                            <th scope="col" style="width: 20%; text-align: center;">ดาวน์โหลด</th>
+                        </tr>
+                    </thead>
+                    <tbody id="documentsTableBody">
+                        <!-- ข้อมูลจะถูก Render ด้วย JavaScript -->
+                        <tr>
+                            <td colspan="5" class="text-center py-4">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <p class="mt-2 text-muted">กำลังโหลดข้อมูล...</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Empty State (Hidden by default) -->
+            <div id="emptyState" class="text-center py-5 d-none">
+                <i class="fas fa-inbox fa-3x text-muted mb-3"></i>
+                <h5 class="text-muted">ไม่พบข้อมูลที่ค้นหา</h5>
+            </div>
+        </section>
+
+        <!-- About Section (Placeholder) -->
+        <section id="about" class="content-container">
+            <h2 class="section-title"><i class="fas fa-info-circle me-2"></i>เกี่ยวกับกลุ่มงานวิจัย</h2>
+            <p>กลุ่มงานวิจัย โรงพยาบาลชลบุรี มุ่งมั่นส่งเสริมและพัฒนาบุคลากรทางการพยาบาลให้มีความสามารถในการทำวิจัยและนำผลงานวิจัยไปใช้ในการพัฒนาคุณภาพการพยาบาล เพื่อประโยชน์สูงสุดต่อผู้ป่วยและระบบสุขภาพ</p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="footer-title">กลุ่มงานวิจัย โรงพยาบาลชลบุรี</h5>
+                    <p class="small text-white-50">
+                        112 ถนนลงหาดบางแสน ตำบลบางปลาสร้อย อำเภอเมืองชลบุรี จังหวัดชลบุรี 20000
+                    </p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="footer-title">ติดต่อสอบถาม</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> 038-xxx-xxx (งานวิจัย)</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> research@chb.moph.go.th</li>
+                        <li class="mb-2"><i class="fas fa-clock me-2"></i> จันทร์ - ศุกร์ 08.30 - 16.30 น.</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="footer-title">ลิงก์ที่เกี่ยวข้อง</h5>
+                    <ul class="list-unstyled small">
+                        <li><a href="https://www.chb.moph.go.th/" target="_blank" class="footer-link">เว็บไซต์โรงพยาบาลชลบุรี</a></li>
+                        <li><a href="#" class="footer-link">ระบบสารสนเทศโรงพยาบาล</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-secondary">
+        <div class="text-center small text-white-50">
+             &copy; 2023 Chonburi Hospital Nursing Research Center. All Rights Reserved.
+              <br>
+                  พัฒนาโดย พว.วิษณุกรณ์ โอยา (รพ.ชลบุรี)
+          </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- 
+        FILE: script.js 
+        (ส่วน JavaScript ถูกฝังไว้ในไฟล์นี้ 
+         หากต้องการแยกไฟล์ ให้นำเนื้อหาใน <script> ไปไว้ในไฟล์ script.js)
+    -->
+    <script>
+        // ==========================================
+        // CONFIGURATION & SETUP
+        // ==========================================
+        
+        // URL ของ Google Apps Script (Web App) ที่ทำหน้าที่ส่งข้อมูล JSON
+        // *** หมายเหตุ: เปลี่ยน URL นี้เป็น URL จริงจาก Google Apps Script ของคุณ ***
+        const GOOGLE_SCRIPT_API_URL = "https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec";
+
+        // ข้อมูลจำลอง (Mock Data) สำหรับใช้ในกรณีที่ยังไม่ได้ต่อ API จริง
+        // โครงสร้างข้อมูลควรตรงกับ JSON ที่ได้จาก Google Sheets
+        const mockData = [
+            {
+                id: 1,
+                name: "แบบฟอร์มเสนอหัวข้อวิจัย (Proposal Form)",
+                category: "แบบฟอร์ม",
+                date: "2023-10-15",
+                url: "#"
+            },
+            {
+                id: 2,
+                name: "คู่มือจริยธรรมการวิจัยในมนุษย์ (Ethics Guideline)",
+                category: "คู่มือ",
+                date: "2023-09-20",
+                url: "#"
+            },
+            {
+                id: 3,
+                name: "ตัวอย่างบทคัดย่อ (Abstract Template)",
+                category: "เทมเพลต",
+                date: "2023-11-01",
+                url: "#"
+            },
+            {
+                id: 4,
+                name: "ระเบียบการขอทุนวิจัยภายใน",
+                category: "ระเบียบ",
+                date: "2023-08-10",
+                url: "#"
+            },
+            {
+                id: 5,
+                name: "แบบฟอร์มขอพิจารณาจริยธรรม (EC Form)",
+                category: "แบบฟอร์ม",
+                date: "2023-10-25",
+                url: "#"
+            }
+        ];
+
+        // ==========================================
+        // FUNCTIONS
+        // ==========================================
+
+        /**
+         * ฟังก์ชันดึงข้อมูลจาก API
+         * ในที่นี้จะใช้ Mock Data ก่อน หากต้องการใช้จริงให้เปิดส่วน fetch()
+         */
+        async function fetchDocuments() {
+            const tableBody = document.getElementById('documentsTableBody');
+            
+            try {
+                // --- ส่วนโค้ดสำหรับเชื่อมต่อ Google Apps Script จริง ---
+                /*
+                const response = await fetch(GOOGLE_SCRIPT_API_URL);
+                if (!response.ok) throw new Error('Network response was not ok');
+                const data = await response.json();
+                */
+               
+                // --- ส่วนโค้ดจำลอง (Simulation) ---
+                // จำลองการหน่วงเวลาเพื่อให้เห็น Loading state
+                await new Promise(resolve => setTimeout(resolve, 800)); 
+                const data = mockData; 
+                // ------------------------------------
+
+                renderTable(data);
+
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                tableBody.innerHTML = `
+                    <tr>
+                        <td colspan="5" class="text-center text-danger py-4">
+                            <i class="fas fa-exclamation-triangle fa-2x mb-2"></i><br>
+                            เกิดข้อผิดพลาดในการโหลดข้อมูล กรุณาลองใหม่อีกครั้ง
+                        </td>
+                    </tr>
+                `;
+            }
+        }
+
+        /**
+         * ฟังก์ชันแสดงผลข้อมูลลงในตาราง HTML
+         * @param {Array} data - อาร์เรย์ของ objekct ข้อมูลเอกสาร
+         */
+        function renderTable(data) {
+            const tableBody = document.getElementById('documentsTableBody');
+            const emptyState = document.getElementById('emptyState');
+
+            tableBody.innerHTML = ''; // ล้างข้อมูลเก่า
+
+            if (data.length === 0) {
+                emptyState.classList.remove('d-none');
+                return;
+            } else {
+                emptyState.classList.add('d-none');
+            }
+
+            data.forEach((item, index) => {
+                // กำหนดสี Badge ตามหมวดหมู่
+                let badgeClass = 'bg-secondary';
+                if(item.category.includes('แบบฟอร์ม')) badgeClass = 'bg-primary';
+                if(item.category.includes('คู่มือ')) badgeClass = 'bg-success';
+                if(item.category.includes('ระเบียบ')) badgeClass = 'bg-warning text-dark';
+
+                const row = `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td class="fw-bold text-dark">${item.name}</td>
+                        <td><span class="badge ${badgeClass} badge-category">${item.category}</span></td>
+                        <td>${formatDate(item.date)}</td>
+                        <td class="text-center">
+                            <a href="${item.url}" target="_blank" class="btn btn-outline-primary btn-sm btn-download">
+                                <i class="fas fa-download me-1"></i> ดาวน์โหลด
+                            </a>
+                        </td>
+                    </tr>
+                `;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        /**
+         * ฟังก์ชันจัดรูปแบบวันที่ (YYYY-MM-DD -> DD/MM/YYYY)
+         */
+        function formatDate(dateString) {
+            if(!dateString) return '-';
+            const date = new Date(dateString);
+            return date.toLocaleDateString('th-TH');
+        }
+
+        /**
+         * ฟังก์ชันค้นหาและกรองข้อมูล (Real-time Search)
+         */
+        function setupSearchFilter() {
+            const searchInput = document.getElementById('searchInput');
+            
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                
+                // กรองข้อมูลจาก mockData (หรือข้อมูลต้นฉบับที่โหลดมาแล้ว)
+                const filteredData = mockData.filter(item => {
+                    return item.name.toLowerCase().includes(searchTerm) || 
+                           item.category.toLowerCase().includes(searchTerm);
+                });
+
+                renderTable(filteredData);
+            });
+        }
+
+        // ==========================================
+        // INITIALIZATION
+        // ==========================================
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchDocuments();
+            setupSearchFilter();
+        });
+
+    </script>
+</body>
+</html>
+
